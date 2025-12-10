@@ -1,20 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
+    <title>귀여운 Snake Game</title>
     <style>
-        body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #222; }
-        #gameCanvas { background: #111; border: 2px solid #4caf50; }
-        h1 { color: #fff; text-align: center; }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #e3fafc 0%, #fffbe6 100%);
+            margin: 0;
+        }
+        #game-container {
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            padding: 32px 40px 24px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #gameCanvas {
+            background: #e3fafc;
+            border: 3px solid #b2f2ff;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+        }
+        h1 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+            font-family: 'GmarketSansMedium', 'Arial', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+        .desc {
+            color: #868e96;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 500px) {
+            #game-container { padding: 10px; }
+            #gameCanvas { width: 300px; height: 300px; }
+        }
     </style>
+    <!-- 예쁜 폰트 적용 (선택) -->
+    <link href="https://fonts.googleapis.com/css2?family=Gmarket+Sans:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <h1>Snake Game</h1>
+    <div id="game-container">
+        <h1>귀여운 Snake Game 🐍🍎</h1>
         <canvas id="gameCanvas" width="400" height="400"></canvas>
-        <p style="color:#fff; text-align:center;">Use arrow keys to play!</p>
+        <div class="desc">방향키로 조작해 보세요!<br>사과를 먹으며 점수를 올려보세요.</div>
     </div>
     <script src="snake.js"></script>
 </body>
